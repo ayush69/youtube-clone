@@ -1,0 +1,55 @@
+.videocard-container{
+    height: 100%;
+    width: 100%;
+    margin: 1%;
+}
+
+
+.thumbnail-container {
+    height: 100%;
+    width: 100%;
+}
+
+.thumbnail{
+    height: 100%;
+    width: 100%;
+    border-radius: 1.5%;
+}
+
+.video-info{
+    display: flex;
+   
+    
+    
+}
+
+
+.logo{
+    
+height: 20%;
+width: 20%;
+flex-basis: 20%;
+
+        
+    
+}
+.channel-logo{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.title{
+    margin: 0;
+    font-weight: bold;
+}
+
+.option-btn{
+    display: flex;
+    
+}
+
+.options{
+    height: 50%;
+    width: 50%;
+}

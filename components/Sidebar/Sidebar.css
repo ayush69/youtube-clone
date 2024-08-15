@@ -1,0 +1,13 @@
+.sidebar{
+    width: 15%;
+    height: 100vh;
+    color: rgb(36, 35, 34);
+    background-color: #fff5f5;
+    position: fixed;
+    padding-left: 2%;
+    padding-top: 80px;
+}
+
+.small-sidebar{
+    width: 5%;
+}
