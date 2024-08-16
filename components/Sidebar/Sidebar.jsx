@@ -1,7 +1,7 @@
 import React from 'react'
 import './Sidebar.css'
 
-const Sidebar = ({sidebar}) => {
+const Sidebar = ({sidebar, categoryId, setCategoryId}) => {
 
   return (
     <div className={`sidebar ${sidebar?"":"small-sidebar"}`}>
