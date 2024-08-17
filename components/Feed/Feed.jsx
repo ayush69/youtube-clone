@@ -5,7 +5,6 @@ import {API_KEY} from '../../src/data.js'
 import { useEffect } from 'react'
 
 
-
 const Feed = ({sidebar, categoryId}) => {
 
   const [data,setData] = useState([])
@@ -16,15 +15,13 @@ const Feed = ({sidebar, categoryId}) => {
   }
 
   useEffect(()=>{
-      fetchdata();
-  },[categoryId])
-
-
+    fetchdata();
+    },[categoryId])
 
   return (
     <div className={`feed ${sidebar?"":"large-container"}`}>
 
-      {data.map((item,index)=>{
+      {data.map((item,index)=>{     
         return(
           <VideoCard className='video-card'
             item={item}
@@ -33,7 +30,7 @@ const Feed = ({sidebar, categoryId}) => {
             title={item.snippet.title}
             channel_name={item.snippet.channelTitle}
             views={item.statistics.viewCount}
-            dateinfo={item.snippet.publishedAt} 
+            dateinfo={item.snippet.publishedAt}
           />
         )
       })}

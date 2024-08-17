@@ -11,45 +11,41 @@
 }
 
 .thumbnail{
-    height: 100%;
     width: 100%;
     border-radius: 1.5%;
 }
 
 .video-info{
     display: flex;
-   
-    
-    
-}
-
-
-.logo{
-    
-height: 20%;
-width: 20%;
-flex-basis: 20%;
-
-        
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-top: 2%;
     
 }
+
+
 .channel-logo{
-    height: 100%;
-    width: 100%;
+    width: 10%;
     border-radius: 50%;
 }
 
-.title{
-    margin: 0;
-    font-weight: bold;
+.title-block{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
 }
 
-.option-btn{
-    display: flex;
-    
+.title{
+    padding-bottom: 2%;
+    width: 100%;
+    height: 50%;
+    font-weight: bold;
+    overflow:hidden;
 }
+
+
 
 .options{
-    height: 50%;
-    width: 50%;
+    width: 20px;
 }

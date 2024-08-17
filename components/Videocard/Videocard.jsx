@@ -2,27 +2,26 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import thumbnail from '../../src/assets/thumbnail6.png'
 import logo from '../../src/assets/jack.png'
-import options from '../../src/assets/show-more.png'
+import options from '../../src/assets/options.png'
 import './VideoCard.css'
 import 'moment'
 import { viewconverter } from '../../src/data'
 import moment from 'moment'
 
+/*titleshortner*/
 
 const VideoCard = ({item, index, thumbnail, title, channel_name, views, dateinfo}) => {
   return (
     <Link to={`video/${item.snippet.categoryId}/${item.id}`}>
         <div className='videocard-container'>
-            <div className="tumbnail-container">
-                <img className='thumbnail' src={thumbnail} alt="thumbnail"/>
-            </div>
+            <img className='thumbnail' src={thumbnail} alt="thumbnail"/>
+            
             <div className='video-info'>
-                <span className="logo">
-                    <img className='channel-logo' src={logo} alt="channel-logo"/>
-                </span>
+                <img className='channel-logo' src={logo} alt="channel-logo"/>
+                
                 <div className="title-block">
                     <div className='title'>
-                        {title}
+                        {title} 
                     </div>
                     <div className='card-channel-name'>
                         {channel_name}
@@ -31,9 +30,9 @@ const VideoCard = ({item, index, thumbnail, title, channel_name, views, dateinfo
                         <span>{viewconverter(views)} views</span>&bull;<span>{moment(dateinfo).fromNow()}</span><span></span>
                     </div>
                 </div>
-                <span className='option-btn'>
+                <div className='option-btn'>
                     <img className='options' src={options} alt="options" />
-                </span>
+                </div>
             </div>
         </div>
     </Link>
