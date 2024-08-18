@@ -6,6 +6,7 @@ import searchbtn from '../../src/assets/search.png'
 import uploadbtn from '../../src/assets/upload.png'
 import notificationbtn from '../../src/assets/notification.png'
 import profile from '../../src/assets/jack.png'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = ({setSidebar}) => {
@@ -14,7 +15,7 @@ const Navbar = ({setSidebar}) => {
 
         <div className='leftnav'>
             <img src={menu} onClick={()=>setSidebar(prev =>prev = !prev)} alt="" className='menu'/>
-            <img src={logo} alt="" className='youtube-logo'/>
+            <Link to='/' ><img src={logo} alt="" className='youtube-logo'/></Link>
         </div>
 
         <div className='midnav'>

@@ -3,8 +3,9 @@
 }
 
 
-.video-player video{
+.video-player iframe{
     width: 100%;
+    height: 37vw;
     margin-top: 30px;
     border-radius: 15px;
 }

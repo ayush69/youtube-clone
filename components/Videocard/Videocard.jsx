@@ -10,7 +10,7 @@ import moment from 'moment'
 
 /*titleshortner*/
 
-const VideoCard = ({item, index, thumbnail, title, channel_name, views, dateinfo}) => {
+const VideoCard = ({item, thumbnail, title, channel_name, views, dateinfo}) => {
   return (
     <Link to={`video/${item.snippet.categoryId}/${item.id}`}>
         <div className='videocard-container'>

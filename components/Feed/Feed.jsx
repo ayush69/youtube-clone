@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 const Feed = ({sidebar, categoryId}) => {
 
   const [data,setData] = useState([])
+  
 
   const fetchdata = async () => {
     const video_list_url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=100&regionCode=IN&videoCategoryId=${categoryId}&key=${API_KEY}`
@@ -16,21 +17,23 @@ const Feed = ({sidebar, categoryId}) => {
 
   useEffect(()=>{
     fetchdata();
-    },[categoryId])
+  },[categoryId])
+
+  
 
   return (
     <div className={`feed ${sidebar?"":"large-container"}`}>
 
       {data.map((item,index)=>{     
         return(
-          <VideoCard className='video-card'
+          <VideoCard key={index} className='video-card'
             item={item}
-            index={index}
             thumbnail={item.snippet.thumbnails.medium.url}
             title={item.snippet.title}
             channel_name={item.snippet.channelTitle}
             views={item.statistics.viewCount}
             dateinfo={item.snippet.publishedAt}
+            
           />
         )
       })}
