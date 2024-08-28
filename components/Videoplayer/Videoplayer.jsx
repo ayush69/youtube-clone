@@ -8,9 +8,12 @@ import share from '../../src/assets/share.png'
 import save from '../../src/assets/library.png'
 import { API_KEY, viewconverter } from '../../src/data.js'
 import moment from 'moment'
+import { useParams } from 'react-router'
 
 
-const Videoplayer = ({videoId}) => {
+const Videoplayer = () => {
+
+  const {videoId} = useParams();
 
   const [videodata,setVideodata] = useState(null);
   const [channeldata, setChanneldata] = useState(null);
@@ -27,7 +30,7 @@ const Videoplayer = ({videoId}) => {
 
   useEffect(()=>{
     fetchvideodata();
-  },[])
+  },[videoId])
 
   useEffect(()=>{
     fetchchanneldata();
@@ -37,7 +40,7 @@ const Videoplayer = ({videoId}) => {
     <div className='video-player-container'>
       <div className='video-player'>
         {/*<video src={video} controls autoPlay muted></video>*/}
-        <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+        <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
       </div>
       <div className='video-title'>
         {videodata?videodata.snippet.title:"Title Here"}
@@ -68,7 +71,7 @@ const Videoplayer = ({videoId}) => {
       </div>
       <div className='video-description'>
         <div className='despription'>
-            {videodata?viewconverter(videodata.statistics.viewCount):"16K"} views {videodata?moment(videodata.snippet.publishedAt).fr:"2 days ago"} 
+            {videodata?viewconverter(videodata.statistics.viewCount):"16K"} views {videodata?moment(videodata.snippet.publishedAt).fromNow():""} 
             <p>{videodata?videodata.snippet.description:"this is description"}</p>
         </div>
       </div>

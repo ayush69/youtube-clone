@@ -33,6 +33,7 @@ const Feed = ({sidebar, categoryId}) => {
             channel_name={item.snippet.channelTitle}
             views={item.statistics.viewCount}
             dateinfo={item.snippet.publishedAt}
+            channelId={item.snippet.channelId}
             
           />
         )

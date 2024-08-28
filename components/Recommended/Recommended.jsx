@@ -4,6 +4,7 @@ import thumbnail from '../../src/assets/thumbnail3.png'
 import options from '../../src/assets/options.png'
 import { API_KEY, viewconverter } from '../../src/data'
 import moment from 'moment'
+import {Link} from 'react-router-dom'
 
 const Recommended = ({categoryId}) => {
 
@@ -24,13 +25,13 @@ return (
     <div className='recommended-section' >
         {recommendedData.map((item,index)=>{
             return(
-                <div key={index} className="rec-vid-card">
+                <Link to={`/video/${item.snippet.categoryId}/${item.id}`} key={index} className="rec-vid-card">
             
                     <img src={item?item.snippet.thumbnails.medium.url:""} className='rec-vid-thumbnail' alt="logo" />
                     
                     <div className='rec-vid-info'>
                         <div className='rec-vid-title'>
-                            {item?item.snippet.title:"title"}
+                            {item?item.snippet.title.slice(0,47)+"...":"title"}
                         </div>
                         <div className='rec-vid-channel-name'>
                             {item?item.snippet.channelTitle:"channel-name"}
@@ -42,7 +43,7 @@ return (
                     <div className=''>
                         <img src={options} className='rec-vid-options' alt="" />
                     </div>
-                </div>
+                </Link>
             )}
         )}
         
