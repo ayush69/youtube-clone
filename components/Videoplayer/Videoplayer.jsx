@@ -9,6 +9,7 @@ import save from '../../src/assets/library.png'
 import { API_KEY, viewconverter } from '../../src/data.js'
 import moment from 'moment'
 import { useParams } from 'react-router'
+import CommentCard from '../CommentCard/CommentCard.jsx'
 
 
 const Videoplayer = () => {
@@ -24,7 +25,7 @@ const Videoplayer = () => {
   }
 
   const fetchchanneldata = async ()=>{
-    const channeldataurl = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${videodata.snippet.channelId}&key=${API_KEY}`
+    const channeldataurl = `https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${videodata?videodata.snippet.channelId:""}&key=${API_KEY}`
     await fetch(channeldataurl).then(res=>res.json()).then(data=>setChanneldata(data.items[0]))
   }
 
@@ -74,6 +75,9 @@ const Videoplayer = () => {
             {videodata?viewconverter(videodata.statistics.viewCount):"16K"} views {videodata?moment(videodata.snippet.publishedAt).fromNow():""} 
             <p>{videodata?videodata.snippet.description:"this is description"}</p>
         </div>
+      </div>
+      <div className="comment-section">
+          <CommentCard />
       </div>
     </div>
   )
