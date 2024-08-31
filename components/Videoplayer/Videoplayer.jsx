@@ -77,7 +77,7 @@ const Videoplayer = () => {
         </div>
       </div>
       <div className="comment-section">
-          <CommentCard />
+          <CommentCard videoId={videoId} commentCount={videodata?viewconverter(videodata.statistics.commentCount):'102'}/>
       </div>
     </div>
   )
