@@ -1,0 +1,70 @@
+.result-container{
+    padding-left: 18%;
+    padding-top: 1%;
+}
+
+.large-search-container{
+    padding-left: 8%;
+}
+
+
+
+.result-box{
+    display:flex;
+}
+
+.result-box img{
+    border-radius: 15px;
+}
+
+.search-info{
+    margin-left: 1%;
+}
+
+.search-title p{
+
+    font-weight:400;
+    font-size:larger;
+}
+
+.search-stats{
+    display: flex;
+    align-items: center;
+}
+
+.search-stats span{
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+
+.search-channel{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.search-channel img{
+    border-radius: 50%;
+    width: 30px;
+}
+
+.search-channel p{
+    font-size: smaller;
+    font-weight:bold;
+}
+
+.search-description{
+    font-size: xx-small;
+}
+
+
+
+
+
+
+
+
+
+.search-channel{
+    display: flex;
+    align-items: center;
+}

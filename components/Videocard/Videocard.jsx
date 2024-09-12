@@ -40,7 +40,7 @@ const VideoCard = ({item, thumbnail, title, channel_name, views, dateinfo,channe
                         {channel_name}
                     </div>
                     <div className='stats'>
-                        <span>{viewconverter(views)} views</span>&bull;<span>{moment(dateinfo).fromNow()}</span><span></span>
+                        <span>{viewconverter(views)} views</span>&bull;<span>{moment(dateinfo).fromNow()}</span>
                     </div>
                 </div>
                 <div className='option-btn'>
