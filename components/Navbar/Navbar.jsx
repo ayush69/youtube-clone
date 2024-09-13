@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import menu from '../../src/assets/menu.png'
 import logo from '../../src/assets/logo.png'
@@ -6,10 +6,22 @@ import searchbtn from '../../src/assets/search.png'
 import uploadbtn from '../../src/assets/upload.png'
 import notificationbtn from '../../src/assets/notification.png'
 import profile from '../../src/assets/jack.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 const Navbar = ({setSidebar}) => {
+
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+
+
+  const handleSearchQuery = () =>{
+        if(query?.length > 0){
+          navigate(`/search/${query}`);
+        }
+  }
+
   return (
     <nav className='navbar'>
 
@@ -20,8 +32,12 @@ const Navbar = ({setSidebar}) => {
 
         <div className='midnav'>
           <div className='searchbox'>
-            <input type='text' placeholder='Search...' className='search'/>
-            <img src={searchbtn} alt="" className='searchbtn'/>
+            <input value={query} onChange={(e)=>setQuery(e.target.value)} type='text' placeholder='Search...' className='search'
+                  onKeyUp={(e)=>{
+                    if(e.key == "Enter") handleSearchQuery();
+                  }}
+            />
+            <img src={searchbtn} onClick={handleSearchQuery} alt="" className='searchbtn'/>
           </div>
         </div>
 

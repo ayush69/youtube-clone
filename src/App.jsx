@@ -8,7 +8,7 @@ import SearchPage from './Pages/SearchPage/SearchPage.jsx'
 const App = () => {
 
   const [sidebar,setSidebar] = useState(true);
-
+  
 
   return (
     <div>
