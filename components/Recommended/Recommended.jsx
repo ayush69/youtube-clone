@@ -6,7 +6,7 @@ import { API_KEY, viewconverter } from '../../src/data'
 import moment from 'moment'
 import {Link} from 'react-router-dom'
 
-const Recommended = ({categoryId}) => {
+const Recommended = ({categoryId, videoId}) => {
 
 
 const [recommendedData, setRecommendedData] = useState([]);
@@ -18,11 +18,13 @@ const fetchrecommendedData = async()=>{
 
 useEffect(()=>{
     fetchrecommendedData();
-},[])
+    console.log(recommendedData);
+},[recommendedData])
 
 return (
     
     <div className='recommended-section' >
+        {recommendedData.filter((item) => item.id !== videoId).length>0?<div className='recommended-heading'>Recommended</div>:<div></div>}
         {recommendedData.map((item,index)=>{
             return(
                 <Link to={`/video/${item.snippet.categoryId}/${item.id}`} key={index} className="rec-vid-card">
